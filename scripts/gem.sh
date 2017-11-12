@@ -9,6 +9,6 @@ gems=(
 )
 
 # source rbenv before executing npm installation commands
-[[ -s $HOME/.rbenv/bin/rbenv ]] && . ~/.rbenv/bin/rbenv
+# [[ -s $HOME/.rbenv/bin/rbenv ]] && . ~/.rbenv/bin/rbenv
 
 gem install ${gems[@]}
