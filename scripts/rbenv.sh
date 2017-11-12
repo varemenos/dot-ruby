@@ -12,15 +12,17 @@ if [ ! -e "$RBENV_DIR/bin/rbenv" ]; then
 	elif [[ $CURRENT_OS == 'Linux' ]]; then
 		echo "installing ruby-build dependency"
 		packer -S ruby-build
+	else
+		echo "Current OS ($CURRENT_OS) not supported by the installation script"
 	fi
 
 	git clone https://github.com/sstephenson/rbenv.git "$RBENV_DIR"
 else
-	printf "rbenv $(rbenv global) is already installed."
+	printf "rbenv is already installed."
 fi
 
 export PATH="$RBENV_DIR/bin:$PATH"
-[[ -s "$RBENV_DIR/bin/rbenv" ]] && eval "$(rbenv init -)"
+$RBENV_DIR/bin/rbenv init -
 
-rbenv install 2.4.2
-rbenv global 2.4.2
+rbenv install 2.2.2
+rbenv global 2.2.2
