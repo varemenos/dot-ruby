@@ -6,4 +6,5 @@ pkg.link() {
 
 pkg.install() {
 	./scripts/rbenv.sh
+	./scripts/gem.sh
 }
