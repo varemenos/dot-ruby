@@ -19,6 +19,7 @@ else
 	printf "rbenv $(rbenv global) is already installed."
 fi
 
+export PATH="$RBENV_DIR/bin:$PATH"
 [[ -s "$RBENV_DIR/bin/rbenv" ]] && eval "$(rbenv init -)"
 
 rbenv install 2.4.2
