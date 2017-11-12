@@ -19,7 +19,7 @@ else
 	printf "rbenv $(rbenv global) is already installed."
 fi
 
-. "$RBENV_DIR/bin/rbenv"
+[[ -s "$RBENV_DIR/bin/rbenv" ]] && eval "$(rbenv init -)"
 
 rbenv install 2.4.2
 rbenv global 2.4.2
