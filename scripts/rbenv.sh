@@ -24,5 +24,5 @@ fi
 export PATH="$RBENV_DIR/bin:$PATH"
 $RBENV_DIR/bin/rbenv init -
 
-rbenv install 2.4.2
-rbenv global 2.4.2
+rbenv install 2.4.5
+rbenv global 2.4.5
