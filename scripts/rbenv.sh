@@ -6,12 +6,18 @@ if [ ! -e "$RBENV_DIR/bin/rbenv" ]; then
 	echo "Installing rbenv"
 
 	# rbenv dependencies by archlinux
-	if [[ $CURRENT_OS == 'OS X' ]]; then
+	if [[ $CURRENT_OS == 'MAC OS' ]]; then
 		echo "installing ruby-build dependency"
 		brew install ruby-build
 	elif [[ $CURRENT_OS == 'Linux' ]]; then
 		echo "installing ruby-build dependency"
-		packer -S ruby-build
+		if [[ $CURRENT_DISTRO == 'ARCHLINUX' ]]; then
+			packer -S ruby-build
+		elif [[ $CURRENT_DISTRO == 'UBUNTU' ]]; then
+			sudo apt-get install -y ruby-build
+		else
+			echo "Current DISTRO ($CURRENT_DISTRO) not supported by the installation script"
+		fi
 	else
 		echo "Current OS ($CURRENT_OS) not supported by the installation script"
 	fi
