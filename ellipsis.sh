@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 pkg.link() {
-	fs.link_files common
+	stow common -t ~
 }
 
 pkg.install() {
