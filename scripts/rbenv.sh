@@ -22,6 +22,7 @@ if [ ! -e "$RBENV_DIR/bin/rbenv" ]; then
 	fi
 
 	git clone https://github.com/sstephenson/rbenv.git "$RBENV_DIR"
+	git clone git@github.com:rbenv/ruby-build.git "$RBENV_DIR"/plugins/ruby-build
 else
 	printf "rbenv is already installed."
 fi
